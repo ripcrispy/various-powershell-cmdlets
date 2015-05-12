@@ -1,0 +1,1 @@
+﻿Get-MailboxStatistics -Server 'INSERT_HOSTNAME_HERE' | Select DisplayName, ItemCount, TotalItemSize, LastLogonTime | Sort TotalItemSize -Descending | Export-CSV C:\ExchangeReport.csv
