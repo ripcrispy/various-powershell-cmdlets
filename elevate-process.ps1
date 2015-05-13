@@ -15,7 +15,6 @@ elseif (($args.Length -eq 1) -and
         (test-path $args[0] -pathType Container))
 {
   $psi.FileName = 'powershell'
-  # Hello James!
   $psi.Arguments = 
       "-NoExit -Command &{set-location '" + (resolve-path $args[0]) + "'}"
 }
