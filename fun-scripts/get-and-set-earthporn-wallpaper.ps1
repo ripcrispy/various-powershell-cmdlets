@@ -27,4 +27,4 @@ $urls = $wallpapersPage.data.children.data.url | where { $_ -match "jpg$" }
 mkdir -Force "c:\temp\reddit\"
 Invoke-WebRequest -Uri $urls[0] -OutFile "c:\temp\reddit\wallpaper.jpg"
 
-[Wallpaper.Setter]::SetWallpaper('$env:UserProfile\documents\wallpaper $(get-date -f yyyy-MM-dd).jpg')
+[Wallpaper.Setter]::SetWallpaper('$env:UserProfile\documents\wallpaper.jpg')
