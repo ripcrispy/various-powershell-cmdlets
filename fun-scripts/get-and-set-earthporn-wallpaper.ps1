@@ -1,4 +1,5 @@
 ﻿# TO-DO: set as scheduled task for each day
+$datepost = get-date -f yyyy-MM-dd
 
 Add-Type @"
 using System;
@@ -20,11 +21,10 @@ namespace Wallpaper
     }
 }
 "@
-
+mkdir -Force "C:\temp\reddit\"
 $wallpapersPage = Invoke-RestMethod -Method Get -Uri "api.reddit.com/r/earthporn/"
 $urls = $wallpapersPage.data.children.data.url | where { $_ -match "jpg$" }
 
-mkdir -Force "c:\temp\reddit\"
-Invoke-WebRequest -Uri $urls[0] -OutFile "c:\temp\reddit\wallpaper.jpg"
+Invoke-WebRequest -Uri $urls[0] -OutFile "C:\temp\reddit\wallpaper $datepost.jpg"
 
-[Wallpaper.Setter]::SetWallpaper('$env:UserProfile\documents\wallpaper.jpg')
+[Wallpaper.Setter]::SetWallpaper('C:\temp\reddit\wallpaper $datepost.jpg')
