@@ -42,9 +42,9 @@ Function MailNotify([string]$TimeframeString)
     $EmailBody = @"
     Hello $($Account.GivenName),<br \>
     <br \>
-    This is an automated reminder to advise that your password will be expiring $($TimeframeString) 
+    This is an automated reminder to advise that your Domain/Logon password will be expiring $($TimeframeString) 
     on $($Account.PasswordLastSet.AddDays($mpwage).Date.ToShortDateString()).<br \>
-    To change your password you can press Ctrl+Alt+Del and click on: "Change your Password".<br \>
+    To change your Domain/Logon password you can press Ctrl+Alt+Del and click on: "Change your Password".<br \>
     <br \>
     <br \>
     Regards,<br \>
