@@ -1,5 +1,5 @@
 ﻿$Computers = "127.0.0.1","8.8.8.8","google.com","202.142.142.142","github.com"
-$SleepTime = 10
+$SleepTime = 0.1 #Every second
 $CSVFile = "$env:UserProfile\Desktop\results.csv"
 
 while($true)
