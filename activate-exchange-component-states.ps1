@@ -2,8 +2,8 @@
 Connect-ExchangeServer -auto
 
 $components = get-servercomponentstate -identity wbl1-msx-cas | where state -eq inactive | select Component
-$identity = "wbl1-msx-cas"
-$requester = "healthapi"
+$identity = "msx-server" # input local/remote exchange server
+$requester = "healthapi" # input requester
 $i = 1
 
 if ($components)
