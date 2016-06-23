@@ -1,8 +1,5 @@
 ﻿function Convert-Array
 {
-#Usage:  $targetUsers = "String Line1
-#...
-#string Line N" | convert-array
     $i = $($input)
     
     If ($($i).gettype().name -eq "String") 
