@@ -4,11 +4,16 @@
 #...
 #string Line N" | convert-array
     $i = $($input)
-    If ($($i).gettype().name -eq "String") {
-        $output = $i.trim().replace("`r","`n").replace("`n`n","`n").split("`n") |foreach {$_.trim()}
-    } Else {
+    
+    If ($($i).gettype().name -eq "String") 
+    {
+        $output = $i.trim().replace("`r","`n").replace("`n`n","`n").split("`n") | foreach {$_.trim()}
+    } 
+    Else 
+    {
         $output = @()
-        $i |foreach {
+        $i | foreach 
+        {
             $output += $_
         }
     }
